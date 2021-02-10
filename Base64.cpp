@@ -1,5 +1,6 @@
 #include "Base64.h"
 
+// Add architecture support
 #if defined( __AVR__ )
     #include <avr/pgmspace.h>
 #elif defined( ESP8266 ) // ESP32 should work here too
