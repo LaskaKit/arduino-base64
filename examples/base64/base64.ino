@@ -1,5 +1,3 @@
-#include <Base64.h>
-
 /*
  Base64 Encode/Decode example
  
@@ -10,8 +8,10 @@
  
  This example code is in the public domain.
 
- */
 
+ */
+ 
+#include <Base64.h>
 
 void setup()
 {
