@@ -1,23 +1,12 @@
 /*
-	laskarduino.cz
-	Added architecture support for ESP and ARM
-	10 February 2021
-
-*/
-
-#include "Base64.h"
-
-#if defined( __AVR__ )
-    #include <avr/pgmspace.h>
-#elif defined( ESP8266 ) // ESP32 should work here too
-    #include <pgmspace.h>
-#elif defined( __arm__ )
-	#define pgm_read_byte(addr) (*(const unsigned char *)(addr))
-	#define PROGMEM const
+ * Copyright (c) 2013 Adam Rudd.
+ * See LICENSE for more information
+ * https://github.com/adamvr/arduino-base64 
+ */
+#if (defined(__AVR__))
+#include <avr\pgmspace.h>
 #else
-    #pragma message("Unknown Architecture. Using compatibility fallback for pgmspace") 
-	#define pgm_read_byte(addr) (*(const unsigned char *)(addr))
-	#define PROGMEM const
+#include <pgmspace.h>
 #endif
 
 const char PROGMEM b64_alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
